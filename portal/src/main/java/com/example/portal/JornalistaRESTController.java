@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/jornalista")
 public class JornalistaRESTController {
     @Autowired
     private JornalistaRepository jornalistaRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     public List<Jornalista> findAllUsers() {
         // Implement
