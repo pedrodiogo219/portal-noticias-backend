@@ -9,10 +9,9 @@ import org.springframework.context.annotation.Configuration;
 class JornalistaLoadDatabase {
 
     @Bean
-    CommandLineRunner initDatabase(JornalistaRepository repository) {
+    CommandLineRunner initDatabase(JornalistaRepository jornalistaRepository, NoticiaRepository noticiaRepository) {
+        MyCommandLineRunner myCLR = new MyCommandLineRunner(jornalistaRepository, noticiaRepository);
 
-    MyCommandLineRunner myCLR = new MyCommandLineRunner(repository);
-
-    return myCLR;
+        return myCLR;
     }
 }
